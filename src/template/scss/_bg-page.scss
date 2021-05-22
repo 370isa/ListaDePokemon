@@ -1,0 +1,14 @@
+.bg-page {
+  background: url('../images/bg-image.jpg') no-repeat center center / 100% auto;
+  height: 100vh;
+  padding: 50px 0;
+  width: 100%;
+
+  .container {
+    background-color: $white;
+    border-radius: 30px;
+    height: 100%;
+    overflow: hidden;
+    padding: 20px 50px 30px;
+  }
+}

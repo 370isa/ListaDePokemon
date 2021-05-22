@@ -1,0 +1,24 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+  <h1>Listagem de Pokemóns</h1>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Num</th>
+        <th>Nome</th>
+        <th>Candy</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+        <tr>
+          <th>{{ item.num }}</th>
+          <td>{{ item.name }}</td>
+          <td>{{ item.candy }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
