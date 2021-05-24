@@ -10,6 +10,12 @@ compileScss = () => {
     .pipe(gulp.dest('dist/css'));
 }
 
+compileJs = () => {
+  return gulp
+    .src('src/template/js/*')
+    .pipe(gulp.dest('dist/js'));
+}
+
 compileImage = () => {
   return gulp
     .src('src/template/images/*')
@@ -21,5 +27,6 @@ watch = () => {
 }
 
 gulp.task('scss', compileScss);
+gulp.task('js', compileJs);
 gulp.task('image', compileImage);
 gulp.task('default', watch);

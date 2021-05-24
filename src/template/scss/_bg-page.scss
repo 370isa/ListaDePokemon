@@ -9,6 +9,10 @@
     border-radius: 30px;
     height: 100%;
     overflow: hidden;
-    padding: 20px 50px 30px;
   }
+
+  .row,
+  .row > * { height: 100%; }
+
+  h1, h2 { color: $bunker; }
 }
