@@ -35,7 +35,7 @@
           </div>
           <div class="col-4">
             <p class="title-token">Spawn Chance:</p>
-            <p class="information-token">{{ item.spawn_chance }}</p>
+            <p class="information-token">{{ item.spawn_chance }}%</p>
           </div>
           <div class="col-4">
             <p class="title-token">Spawn Time:</p>
@@ -48,14 +48,18 @@
             <p class="title-token">Candy:</p>
             <p class="information-token">{{ item.candy }}</p>
           </div>
-          <div class="col-4">
-            <p class="title-token">Candy Evolve:</p>
-            <p class="information-token">{{ item.candy_count }}</p>
-          </div>
-          <div class="col-4">
-            <p class="title-token">Multipliers:</p>
-            <p class="information-token">{{ item.multipliers }}</p>
-          </div>
+          {% if item.candy_count != null %}
+            <div class="col-4">
+              <p class="title-token">Candy Evolve:</p>
+              <p class="information-token">{{ item.candy_count }}</p>
+            </div>
+          {% endif %}
+          {% if item.multipliers != null %}
+            <div class="col-4">
+              <p class="title-token">Multipliers:</p>
+              <p class="information-token">{{ item.multipliers }}</p>
+            </div>
+          {% endif %}
         </div>
 
         <p class="title-token">Weaknesses:</p>
@@ -65,12 +69,14 @@
           {% endfor %}
         </ul>
 
-        <p class="title-token">Next Evolution:</p>
-        <ul class="d-flex px-0 mb-3">
-          {% for item in item.next_evolution %}
-            <li id="{{ item.num }}" class="next-evolution list-token">{{ item.num }} - {{ item.name }}</li>
-          {% endfor %}
-        </ul>
+        {% if item.next_evolution != null %}
+          <p class="title-token">Next Evolution:</p>
+          <ul class="d-flex px-0 mb-3">
+            {% for item in item.next_evolution %}
+              <li id="{{ item.num }}" class="next-evolution list-token">{{ item.num }} - {{ item.name }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
       </div>
 
       <div class="col-3 text-center height-auto position-relative">
