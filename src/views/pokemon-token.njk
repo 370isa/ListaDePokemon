@@ -1,0 +1,91 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+  <div class="pokemon-token">
+    <div class="row height-auto">
+      <div class="col-9">
+        <h2>{{ item.num }} - {{ item.name }}</h2>
+
+        <p class="title-token">Type:</p>
+        <ul class="d-flex px-0">
+          {% for item in item.type %}
+            <li class="list-token">{{ item }}</li>
+          {% endfor %}
+        </ul>
+
+        <div class="row">
+          <div class="col-4">
+            <p class="title-token">Height:</p>
+            <p class="information-token">{{ item.height }}</p>
+          </div>
+          <div class="col-4">
+            <p class="title-token">Weight:</p>
+            <p class="information-token">{{ item.weight }}</p>
+          </div>
+          <div class="col-4">
+            <p class="title-token">Egg:</p>
+            <p class="information-token">{{ item.egg }}</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <p class="title-token">Avg Spawns:</p>
+            <p class="information-token">{{ item.avg_spawns }}</p>
+          </div>
+          <div class="col-4">
+            <p class="title-token">Spawn Chance:</p>
+            <p class="information-token">{{ item.spawn_chance }}%</p>
+          </div>
+          <div class="col-4">
+            <p class="title-token">Spawn Time:</p>
+            <p class="information-token">{{ item.spawn_time }}</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <p class="title-token">Candy:</p>
+            <p class="information-token">{{ item.candy }}</p>
+          </div>
+          {% if item.candy_count != null %}
+            <div class="col-4">
+              <p class="title-token">Candy Evolve:</p>
+              <p class="information-token">{{ item.candy_count }}</p>
+            </div>
+          {% endif %}
+          {% if item.multipliers != null %}
+            <div class="col-4">
+              <p class="title-token">Multipliers:</p>
+              <p class="information-token">{{ item.multipliers }}</p>
+            </div>
+          {% endif %}
+        </div>
+
+        <p class="title-token">Weaknesses:</p>
+        <ul class="d-flex px-0">
+          {% for item in item.weaknesses %}
+            <li class="list-token">{{ item }}</li>
+          {% endfor %}
+        </ul>
+
+        {% if item.next_evolution != null %}
+          <p class="title-token">Next Evolution:</p>
+          <ul class="d-flex px-0 mb-3">
+            {% for item in item.next_evolution %}
+              <li id="{{ item.num }}" class="next-evolution list-token">{{ item.num }} - {{ item.name }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+
+      <div class="col-3 text-center height-auto position-relative">
+        <img src="{{ item.img }}" alt="{{ item.name }}" class="pokeborder pokeborder-radius-100 pokeborder-purple">
+
+        <a href="/" class="information-token btn-back mb-3">
+          Back
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

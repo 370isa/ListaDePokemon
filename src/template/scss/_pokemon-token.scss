@@ -1,0 +1,81 @@
+.pokemon-token {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  h2 { margin-bottom: 15px; }
+
+  ul {
+    list-style: none;
+    margin-bottom: 30px;
+  }
+
+  .title-token {
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+
+  .information-token {
+    border: 2px solid $wisteria;
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px $bunker;
+    height: 36px;
+    margin-bottom: 30px;
+    padding: 4px 15px;
+  }
+
+  .list-token {
+    background-color: $wisteria;
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px $bunker;
+    color: $white;
+    height: 36px;
+    margin: 0 8px;
+    padding: 4px 15px;
+    width: auto;
+
+    &:first-child { margin-left: 0; }
+    &:last-child { margin-right: 0; }
+  }
+
+  .next-evolution { cursor: pointer; }
+
+  img {
+    border-width: 6px;
+    position: relative;
+    top: 5px;
+    height: 175px;
+    width: 175px;
+  }
+
+  .height-auto { height: auto; }
+
+  .btn-back {
+    color: $wisteria;
+    display: flex;
+    text-decoration: none;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+
+    &::before {
+      background: url('../images/back.png') no-repeat;
+      content: '';
+      display: block;
+      height: 100%;
+      margin-right: 10px;
+      width: 24px;
+    }
+
+    &:hover {
+      background-color: $wisteria;
+      color: $white;
+      transition: all ease .5s;
+
+      &::before {
+        background: url('../images/back-hover.png') no-repeat;
+        transition: all ease .5s;
+      }
+    }
+  }
+}

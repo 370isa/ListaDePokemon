@@ -1,0 +1,23 @@
+{
+  "name": "pokemonlist",
+  "version": "1.0.0",
+  "description": "Este projeto consiste em listar os nomes dos Pokemons utilizando uma Api externa\r para fim de estudos e treinamentos das habilidades com JS e Node.js.",
+  "main": "scripts.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "author": "Eloisa Amorin",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.1",
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.3"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^6.0.0",
+    "nodemon": "^2.0.7"
+  }
+}
