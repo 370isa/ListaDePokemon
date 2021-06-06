@@ -41,9 +41,7 @@
   .next-evolution { cursor: pointer; }
 
   img {
-    border: 6px solid $wisteria;
-    border-radius: 100%;
-    box-shadow: 3px 3px 6px $bunker;
+    border-width: 6px;
     position: relative;
     top: 5px;
     height: 175px;

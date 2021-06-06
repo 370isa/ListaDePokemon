@@ -1,17 +1,11 @@
-// Import Bootstrap
 // -------------------------
-@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
-@import '../../../node_modules/bootstrap/scss/bootstrap-utilities.scss';
-
+// Components
 // -------------------------
-// Variables
-// -------------------------
-@import 'variables';
+@import 'components/style.scss';
 
 // -------------------------
 // Layout
 // -------------------------
 @import 'bg-page';
-@import 'scrollbar';
 @import 'list';
 @import 'pokemon-token';
