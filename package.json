@@ -4,7 +4,8 @@
   "description": "Este projeto consiste em listar os nomes dos Pokemons utilizando uma Api externa\r para fim de estudos e treinamentos das habilidades com JS e Node.js.",
   "main": "scripts.js",
   "scripts": {
-    "start": "nodemon src/server.js"
+    "start": "nodemon src/server.js",
+    "build": "netlify-lambda build express"
   },
   "author": "Eloisa Amorin",
   "license": "ISC",
