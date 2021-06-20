@@ -20,6 +20,27 @@ const apiPokemon = async() => {
   return data;
 }
 
+const filterPokemon = (uri) => {
+  server.get(`/${uri}`, async(req, res) => {
+    const { pokemon } = await apiPokemon();
+    const cat = req.query.name;
+    var items = [];
+
+    for (const poke of pokemon) {
+      for (const weaknesses of poke.weaknesses) {
+        if (weaknesses == cat) {
+          items.push(poke);
+        }
+      }
+    }
+
+    if (!items.length)
+      return res.redirect('/error-404');
+
+    return res.render('group-list', { items, uri, category: cat });
+  });
+}
+
 server.get('/', async(req, res) => {
   const { pokemon } = await apiPokemon();
 
@@ -36,10 +57,17 @@ server.get('/pokemon-token', async(req, res) => {
   });
 
   if (!pokeId)
-    return res.send('Pokemon not found!');
+    return res.redirect('/error-404');
 
   return res.render('pokemon-token', { item: pokeId });
 });
+
+server.get('/error-404', async(req, res) => {
+  return res.render('404');
+});
+
+filterPokemon('weaknesses');
+filterPokemon('type');
 
 server.listen(5000, () => {
   console.log('server is running!');

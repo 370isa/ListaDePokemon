@@ -1,14 +1,20 @@
-const pokemons = document.querySelectorAll('.item-list');
-const nextEvolutions = document.querySelectorAll('.next-evolution');
+const tokenID = document.querySelectorAll('.link-id');
+const tokenName = document.querySelectorAll('.link-name');
 
-const renderLink = (items) => {
+const renderLink = (items, uri, type) => {
   for (let item of items) {
     item.addEventListener('click', () => {
-      const pokemonId = item.getAttribute('id');
-      window.location.href = `/pokemon-token?id=${Number(pokemonId)}`;
+      const pokeSearch = type == 'int' ? `id=${Number(item.getAttribute('id'))}` : `name=${item.getAttribute('id')}`;
+      uri = uri == '' ? item.getAttribute('name') : uri;
+      window.location.href = `/${uri}?${pokeSearch}`;
     });
   }
 }
 
-renderLink(pokemons);
-renderLink(nextEvolutions);
+renderLink(tokenID, 'pokemon-token', 'int');
+renderLink(tokenName, '', 'str');
+
+const voltar = () => {
+  // history.go(1)
+  window.history.back();
+}

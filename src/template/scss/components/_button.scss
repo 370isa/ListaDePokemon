@@ -1,0 +1,44 @@
+.btn {
+  border: 2px solid $wisteria;
+  border-radius: 10px;
+  box-shadow: 3px 3px 6px $bunker;
+  height: 36px;
+  padding: 4px 15px;
+  color: $wisteria;
+  display: inline-flex;
+
+  &::before {
+    content: '';
+    display: block;
+    height: 100%;
+    margin-right: 10px;
+    width: 24px;
+  }
+
+  &:hover {
+    background-color: $wisteria;
+    color: $white;
+    transition: all ease .5s;
+
+    &::before { transition: all ease .5s; }
+  }
+
+  &.btn-back {
+    &::before { background: url('../images/back.png') no-repeat; }
+
+    &:hover {
+      &::before { background: url('../images/back-hover.png') no-repeat; }
+    }
+  }
+
+  &.btn-home {
+    &::before { background: url('../images/home.png') no-repeat; }
+
+    &:hover {
+      &::before { background: url('../images/home-hover.png') no-repeat; }
+    }
+  }
+}
+
+.link-id:hover,
+.link-name:hover { opacity: .7; }

@@ -1,0 +1,21 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+  <div class="error-404 hg-1 d-flex align-items-center justify-content-center">
+    <div class="hg-1 wd-2">
+      <div class="hg-3 mg-top-2 wd-1 position-relative">
+        <span class="text-animation">404</span>
+      </div>
+      <div class="hg-2 text-center position-relative">
+        <h1>Pokemon not found!</h1>
+        <div class="d-flex gap-3 justify-content-center mt-4">
+          <a class="btn btn-back" onclick="voltar()">Back</a>
+          <a href="/" class="btn btn-home">Home</a>
+        </div>
+      </div>
+    </div>
+    <div class="hg-1 wd-2 d-flex align-items-center justify-content-center">
+      <img src="./images/404.jpg" alt="404" class="wd-1">
+    </div>
+  </div>
+{% endblock %}
