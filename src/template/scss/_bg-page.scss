@@ -14,5 +14,8 @@
   .row,
   .row > * { height: 100%; }
 
-  h1, h2 { color: $bunker; }
+  h1, h2 {
+    color: $bunker;
+    font-family: $font-erica-one;
+  }
 }

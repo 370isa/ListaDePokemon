@@ -29,6 +29,7 @@
     border-radius: 10px;
     box-shadow: 3px 3px 6px $bunker;
     color: $white;
+    cursor: pointer;
     height: 36px;
     margin: 0 8px;
     padding: 4px 15px;
@@ -37,8 +38,6 @@
     &:first-child { margin-left: 0; }
     &:last-child { margin-right: 0; }
   }
-
-  .next-evolution { cursor: pointer; }
 
   img {
     border-width: 6px;
@@ -49,33 +48,4 @@
   }
 
   .height-auto { height: auto; }
-
-  .btn-back {
-    color: $wisteria;
-    display: flex;
-    text-decoration: none;
-    position: absolute;
-    bottom: 0;
-    right: 20px;
-
-    &::before {
-      background: url('../images/back.png') no-repeat;
-      content: '';
-      display: block;
-      height: 100%;
-      margin-right: 10px;
-      width: 24px;
-    }
-
-    &:hover {
-      background-color: $wisteria;
-      color: $white;
-      transition: all ease .5s;
-
-      &::before {
-        background: url('../images/back-hover.png') no-repeat;
-        transition: all ease .5s;
-      }
-    }
-  }
 }

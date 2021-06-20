@@ -9,7 +9,7 @@
         <p class="title-token">Type:</p>
         <ul class="d-flex px-0">
           {% for item in item.type %}
-            <li class="list-token">{{ item }}</li>
+            <li id="{{ item }}" name="type" class="link-name list-token">{{ item }}</li>
           {% endfor %}
         </ul>
 
@@ -65,7 +65,7 @@
         <p class="title-token">Weaknesses:</p>
         <ul class="d-flex px-0">
           {% for item in item.weaknesses %}
-            <li class="list-token">{{ item }}</li>
+            <li id="{{ item }}" name="weaknesses" class="link-name list-token">{{ item }}</li>
           {% endfor %}
         </ul>
 
@@ -73,7 +73,7 @@
           <p class="title-token">Next Evolution:</p>
           <ul class="d-flex px-0 mb-3">
             {% for item in item.next_evolution %}
-              <li id="{{ item.num }}" class="next-evolution list-token">{{ item.num }} - {{ item.name }}</li>
+              <li id="{{ item.num }}" class="link-id list-token">{{ item.num }} - {{ item.name }}</li>
             {% endfor %}
           </ul>
         {% endif %}
@@ -81,11 +81,13 @@
 
       <div class="col-3 text-center height-auto position-relative">
         <img src="{{ item.img }}" alt="{{ item.name }}" class="pokeborder pokeborder-radius-100 pokeborder-purple">
-
-        <a href="/" class="information-token btn-back mb-3">
-          Back
-        </a>
+        {# <a class="btn btn-back mb-3" onclick="voltar()">Back</a> #}
       </div>
+    </div>
+
+    <div class="d-flex gap-3 justify-content-end me-4 my-3">
+      <a class="btn btn-back" onclick="voltar()">Back</a>
+      <a href="/" class="btn btn-home">Home</a>
     </div>
   </div>
 {% endblock %}

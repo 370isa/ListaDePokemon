@@ -13,6 +13,5 @@ URL da API: https://www.canalti.com.br/api/pokemons.json
 
 # Versões futuras
 - Publicar em uma plataforma do GIT para que qualquer um consiga acessar e testar
-  - e tambpem para poder comprender melhor como funciona a publicação de um site na prática.
-- Agrupar os pokemons com os mesmos 'Weaknesses' (Fraquezas):
-  - A ideia é conseguir acessar pelos items do 'Weaknesses' na pãgina que est"ao as infos dos pokemons.
+  - e tambem para poder comprender melhor como funciona a publicação de um site na prática.
+- Adicionar um campo de busca na Home

@@ -3,7 +3,7 @@
 {% block content %}
   <div class="list-page">
     <div class="d-flex align-items-center mb-4">
-      <i class="image pokeborder pokeborder-radius-100 pokeborder-purple"></i>
+      <i class="image image-1 pokeborder pokeborder-radius-100 pokeborder-purple"></i>
       <h1>Pokemóns List</h1>
     </div>
 
@@ -22,7 +22,7 @@
       <table class="table table-hover">
         <tbody>
           {% for item in items %}
-            <tr class="item-list" id="{{ item.id }}">
+            <tr class="item-list link-id" id="{{ item.id }}">
               <th>{{ item.num }}</th>
               <td>{{ item.name }}</td>
               <td>{{ item.candy }}</td>
