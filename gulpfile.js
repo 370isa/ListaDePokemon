@@ -23,7 +23,9 @@ compileImage = () => {
 }
 
 watch = () => {
+  gulp.watch('src/assets/images/*', compileImage);
   gulp.watch('src/assets/scss/**/*.scss', compileScss);
+  gulp.watch('src/assets/js/*', compileJs);
 }
 
 gulp.task('scss', compileScss);
