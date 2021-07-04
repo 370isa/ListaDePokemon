@@ -18,10 +18,12 @@ nunjucks.configure('src/views', {
   noCache: true
 });
 
-const router = server.use('/', require('./../routes'));
+// const router = server.use('/', require('./../routes'));
 
-server.use(bodyParser.json());
-server.use('/.netlify/functions/server', require('./../routes')); // path must route to lambda
+// server.use(bodyParser.json());
+// server.use('/.netlify/functions/server', require('./../routes')); // path must route to lambda
+
+server.use('/', require('./../routes'));
 
 module.exports = server;
 module.exports.handler = serverless(server);
