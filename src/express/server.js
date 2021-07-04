@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const nunjucks = require('nunjucks');
 
 const server = express();
+const router = require('./../routes');
 
 server.use(express.static('dist'));
 
@@ -18,12 +19,12 @@ nunjucks.configure('src/views', {
   noCache: true
 });
 
-// const router = server.use('/', require('./../routes'));
 
-// server.use(bodyParser.json());
-// server.use('/.netlify/functions/server', require('./../routes')); // path must route to lambda
+server.use(bodyParser.json());
+server.use('/.netlify/functions/server', router); // path must route to lambda
+server.use('/', (req, res) => res.sendFile(path.join(__dirname, '../views/list.njk')));
 
-server.use('/', require('./../routes'));
-
-module.exports = server;
 module.exports.handler = serverless(server);
+
+server.use('/', router);
+module.exports = server;
