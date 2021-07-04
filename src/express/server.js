@@ -22,7 +22,7 @@ nunjucks.configure('src/views', {
 
 server.use(bodyParser.json());
 server.use('/.netlify/functions/server', router); // path must route to lambda
-server.use('/', (req, res) => res.sendFile(path.join(__dirname, '../views/list.njk')));
+server.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
 module.exports.handler = serverless(server);
 
