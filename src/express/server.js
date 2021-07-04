@@ -22,7 +22,6 @@ const router = server.use('/', require('./../routes'));
 
 server.use(bodyParser.json());
 server.use('/.netlify/functions/server', require('./../routes')); // path must route to lambda
-server.use('/', (req, res) => res.sendFile(path.join(__dirname, '../../dist')));
 
 module.exports = server;
 module.exports.handler = serverless(server);
